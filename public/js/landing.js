@@ -429,7 +429,7 @@ if (navbar) {
         if (scrollTicking) return;
         scrollTicking = true;
         requestAnimationFrame(() => {
-            if (window.scrollY > 50) {
+            if (window.scrollY > 600) {
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');
@@ -455,3 +455,20 @@ document.querySelectorAll('.technical-card, .saas-card').forEach(card => {
         });
     }, { passive: true });
 });
+
+// ========== HERO SCROLL INDICATOR ==========
+const scrollIndicator = document.querySelector('.scroll-indicator');
+if (scrollIndicator) {
+    scrollIndicator.addEventListener('click', () => {
+        const target = document.getElementById('more-content');
+        if (target) {
+            const navbarHeight = 80; // Approximate navbar height
+            const targetPosition = target.getBoundingClientRect().top + window.scrollY - navbarHeight;
+
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+}

@@ -29,9 +29,7 @@
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Aivra Automation" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{ asset('css/landing.css') }}">
     <link rel="stylesheet" href="{{ asset('css/components.css') }}">
@@ -108,6 +106,14 @@
         <div class="content-center">
             <img src="{{ asset('assets/img/Logo Aivra 3D Branca.svg') }}" alt="Aivra Logo" class="logo-hero">
             <h1 class="brand-title">Aivra</h1>
+            <h2 class="hero-sub fade-in-up delay-200" style="color: rgba(255, 255, 255, 0.8); font-size: 1.5rem; font-weight: 400; margin-top: 1rem; max-width: 600px; opacity: 0; animation-fill-mode: forwards;">
+                Tecnologia que molda o futuro dos seus negócios.
+            </h2>
+        </div>
+
+        <div class="scroll-indicator fade-in-up delay-500">
+            <span class="scroll-text">Clique e conheça mais</span>
+            <i class="ph ph-caret-down"></i>
         </div>
 
 
@@ -120,8 +126,8 @@
     </div>
 
     <!-- HERO CONTENTS -->
-    <section class="original-hero-content"
-        style="position: relative; padding: 4rem 0 8rem; margin-top: -2rem; z-index: 20;">
+    <section id="more-content" class="original-hero-content"
+        style="position: relative; padding: 4rem 0 8rem; margin-top: -2rem; z-index: 30;">
 
         <div class="hero-container">
             <div class="hero-text-col reveal">
@@ -140,7 +146,7 @@
 
                 <div class="cta-group">
                     <a href="#" class="btn-primary open-modal">Começar Agora</a>
-                    <a href="#solucoes" class="btn-ghost" style="color: #475569;">Explorar Soluções</a>
+                    <a href="#solucoes" class="btn-minimal">Explorar Soluções <i class="ph ph-arrow-down"></i></a>
                 </div>
 
                 <div class="hero-stats">
@@ -161,67 +167,67 @@
                 </div>
             </div>
 
-            <div class="hero-visual-col reveal delay-200">
-                <div class="glass-card-main" style="overflow: hidden;">
-                    <div class="glass-header">
-                        <div class="glass-dots">
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                            <div class="dot"></div>
+            <div class="hero-visual-col reveal delay-200" id="hero-performance-monitor">
+                <div class="glass-card-main" style="overflow: hidden;" id="glass-card-main">
+                    <div class="glass-header" id="glass-header-monitor">
+                        <div class="glass-dots" id="glass-dots-monitor">
+                            <div class="dot" id="monitor-dot-1"></div>
+                            <div class="dot" id="monitor-dot-2"></div>
+                            <div class="dot" id="monitor-dot-3"></div>
                         </div>
-                        <span
+                        <span id="monitor-label-text"
                             style="font-size: 0.75rem; color: #94A3B8; font-weight: 600; letter-spacing: 0.05em;">PERFORMANCE_MONITOR</span>
                     </div>
                     <!-- Reuse Graph Content -->
-                    <div class="performance-graph-wrapper">
+                    <div class="performance-graph-wrapper" id="performance-graph-wrapper-monitor">
                         <!-- Before Zone -->
-                        <div class="p-zone before">
-                            <div class="zone-header">
-                                <span class="zone-label">Antes</span>
-                                <span class="zone-tag error">Processos Manuais</span>
+                        <div class="p-zone before" id="p-zone-before">
+                            <div class="zone-header" id="zone-header-before">
+                                <span class="zone-label" id="zone-label-before">Antes</span>
+                                <span class="zone-tag error" id="zone-tag-before">Processos Manuais</span>
                             </div>
-                            <div class="zone-visual">
-                                <svg viewBox="0 0 300 50" class="line-static" preserveAspectRatio="none">
+                            <div class="zone-visual" id="zone-visual-before">
+                                <svg viewBox="0 0 300 50" class="line-static" preserveAspectRatio="none" id="svg-line-static">
                                     <path d="M0,40 Q30,45 60,35 T120,40 T180,30 T240,45 T300,40" fill="none"
                                         stroke="#94A3B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                        opacity="0.4" stroke-dasharray="4 4" />
+                                        opacity="0.4" stroke-dasharray="4 4" id="path-line-static" />
                                 </svg>
                             </div>
                         </div>
 
                         <!-- After Zone -->
-                        <div class="p-zone after">
-                            <div class="zone-header">
-                                <span class="zone-label">Depois (Aivra)</span>
-                                <span class="zone-tag success">Automação Inteligente</span>
+                        <div class="p-zone after" id="p-zone-after">
+                            <div class="zone-header" id="zone-header-after">
+                                <span class="zone-label" id="zone-label-after">Depois (Aivra)</span>
+                                <span class="zone-tag success" id="zone-tag-after">Automação Inteligente</span>
                             </div>
-                            <div class="zone-visual growth">
+                            <div class="zone-visual growth" id="zone-visual-growth">
                                 <svg viewBox="0 0 300 120" class="line-growth" preserveAspectRatio="none"
-                                    style="overflow: visible;">
-                                    <defs>
+                                    style="overflow: visible;" id="svg-line-growth">
+                                    <defs id="svg-defs-growth">
                                         <linearGradient id="aivraGradient" x1="0" y1="0" x2="1" y2="0">
-                                            <stop offset="0%" stop-color="#2563EB" />
-                                            <stop offset="100%" stop-color="#60A5FA" />
+                                            <stop offset="0%" stop-color="#2563EB" id="stop-gradient-start" />
+                                            <stop offset="100%" stop-color="#60A5FA" id="stop-gradient-end" />
                                         </linearGradient>
                                         <linearGradient id="fillGradient" x1="0" y1="0" x2="0" y2="1">
-                                            <stop offset="0%" stop-color="#2563EB" stop-opacity="0.15" />
-                                            <stop offset="100%" stop-color="#2563EB" stop-opacity="0" />
+                                            <stop offset="0%" stop-color="#2563EB" stop-opacity="0.15" id="stop-fill-start" />
+                                            <stop offset="100%" stop-color="#2563EB" stop-opacity="0" id="stop-fill-end" />
                                         </linearGradient>
                                         <filter id="glow">
-                                            <feGaussianBlur stdDeviation="4" result="coloredBlur" />
-                                            <feMerge>
-                                                <feMergeNode in="coloredBlur" />
-                                                <feMergeNode in="SourceGraphic" />
+                                            <feGaussianBlur stdDeviation="4" result="coloredBlur" id="fe-gaussian-blur" />
+                                            <feMerge id="fe-merge">
+                                                <feMergeNode in="coloredBlur" id="fe-merge-node-blur" />
+                                                <feMergeNode in="SourceGraphic" id="fe-merge-node-source" />
                                             </feMerge>
                                         </filter>
                                     </defs>
                                     <!-- Fill Area -->
                                     <path d="M0,100 C80,100 120,80 180,40 C240,10 270,5 300,0 L300,120 L0,120 Z"
-                                        fill="url(#fillGradient)" class="growth-area" />
+                                        fill="url(#fillGradient)" class="growth-area" id="path-growth-area" />
                                     <!-- Line -->
                                     <path d="M0,100 C80,100 120,80 180,40 C240,10 270,5 300,0" fill="none"
                                         stroke="url(#aivraGradient)" stroke-width="3" stroke-linecap="round"
-                                        class="animate-draw" filter="url(#glow)" />
+                                        class="animate-draw" filter="url(#glow)" id="path-animate-draw" />
                                 </svg>
                             </div>
                         </div>
@@ -237,24 +243,24 @@
     <section class="tech-carousel">
         <div class="tech-track">
             <!-- Original Set -->
-            <div class="tech-item"><i class="ph ph-sparkle"></i><span>Gemini AI</span></div>
-            <div class="tech-item"><i class="ph ph-rocket-launch"></i><span>Antigravity</span></div>
-            <div class="tech-item"><i class="ph ph-share-network"></i><span>n8n Workflow</span></div>
-            <div class="tech-item"><i class="ph ph-cloud"></i><span>Cloud Infra</span></div>
-            <div class="tech-item"><i class="ph ph-file-code"></i><span>Python</span></div>
-            <div class="tech-item"><i class="ph ph-file-js"></i><span>Node.js</span></div>
-            <div class="tech-item"><i class="ph ph-robot"></i><span>AI Agents</span></div>
-            <div class="tech-item"><i class="ph ph-database"></i><span>Supabase</span></div>
+            <div class="tech-item"><i class="ph ph-desktop"></i><span>Web Design</span></div>
+            <div class="tech-item"><i class="ph ph-rocket-launch"></i><span>Transformação Digital</span></div>
+            <div class="tech-item"><i class="ph ph-share-network"></i><span>Otimização de Processos</span></div>
+            <div class="tech-item"><i class="ph ph-cloud"></i><span>Arquitetura de Infraestrutura Gerenciada</span></div>
+            <div class="tech-item"><i class="ph ph-tag"></i><span>Soluções Personalizadas</span></div>
+            <div class="tech-item"><i class="ph ph-file-js"></i><span>Desenvolvimento de Software</span></div>
+            <div class="tech-item"><i class="ph ph-robot"></i><span>Eficiência Operacional</span></div>
+            <div class="tech-item"><i class="ph ph-database"></i><span>Infraestrutura de Dados</span></div>
 
             <!-- Duplicated Set for Infinite Scroll -->
-            <div class="tech-item"><i class="ph ph-sparkle"></i><span>Gemini AI</span></div>
-            <div class="tech-item"><i class="ph ph-rocket-launch"></i><span>Antigravity</span></div>
-            <div class="tech-item"><i class="ph ph-share-network"></i><span>n8n Workflow</span></div>
-            <div class="tech-item"><i class="ph ph-cloud"></i><span>Cloud Infra</span></div>
-            <div class="tech-item"><i class="ph ph-file-code"></i><span>Python</span></div>
-            <div class="tech-item"><i class="ph ph-file-js"></i><span>Node.js</span></div>
-            <div class="tech-item"><i class="ph ph-robot"></i><span>AI Agents</span></div>
-            <div class="tech-item"><i class="ph ph-database"></i><span>Supabase</span></div>
+            <div class="tech-item"><i class="ph ph-desktop"></i><span>Web Design</span></div>
+            <div class="tech-item"><i class="ph ph-rocket-launch"></i><span>Transformação Digital</span></div>
+            <div class="tech-item"><i class="ph ph-share-network"></i><span>Otimização de Processos</span></div>
+            <div class="tech-item"><i class="ph ph-cloud"></i><span>Arquitetura de Infraestrutura Gerenciada</span></div>
+            <div class="tech-item"><i class="ph ph-tag"></i><span>Soluções Personalizadas</span></div>
+            <div class="tech-item"><i class="ph ph-file-js"></i><span>Desenvolvimento de Software</span></div>
+            <div class="tech-item"><i class="ph ph-robot"></i><span>Eficiência Operacional</span></div>
+            <div class="tech-item"><i class="ph ph-database"></i><span>Infraestrutura de Dados</span></div>
         </div>
     </section>
 
@@ -355,7 +361,7 @@
                     </a>
                 </div>
                 <div class="saas-card glassmorphism reveal delay-200">
-                    <div class="saas-badge active">Disponível</div>
+                    <div class="saas-badge active">Novo</div>
                     <div class="saas-header">
                         <img src="{{ asset('assets/img/Logo FiscalDock.svg') }}" alt="FiscalDock Logo" class="saas-logo-img">
                         <h3
@@ -372,6 +378,24 @@
                     </div>
                     <a href="https://fiscaldock.com.br" target="_blank" rel="noopener noreferrer" class="saas-cta">
                         Conhecer Solução <i class="ph ph-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="saas-card glassmorphism reveal delay-300">
+                    <div class="saas-badge active">Novo</div>
+                    <div class="saas-header">
+                        <img src="{{ asset('assets/img/calzapLogo.png') }}" alt="CalZAP Logo" class="saas-logo-img" style="border-radius: 8px;">
+                        <h3
+                            style="font-family: 'Inter', sans-serif; font-weight: 700; letter-spacing: -0.02em; color: #1E293B;">
+                            CalZAP</h3>
+                    </div>
+                    <p>Automação inteligente para WhatsApp que recupera vendas e atende clientes 24/7. Crie fluxos visuais, integre com plataformas de vendas e use IA para transcrever áudios e responder com contexto.</p>
+                    <div class="saas-tags">
+                        <span class="tag">WhatsApp</span>
+                        <span class="tag">Vendas</span>
+                        <span class="tag">IA</span>
+                    </div>
+                    <a href="#" class="saas-cta open-modal">
+                        Saiba Mais <i class="ph ph-arrow-right"></i>
                     </a>
                 </div>
             </div>

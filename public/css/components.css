@@ -19,6 +19,9 @@
     border-color: var(--color-border-active);
     box-shadow: var(--shadow-active);
     transform: translateY(-2px);
+    background: #FFFFFF;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
 }
 
 /* Active State Indicator */
@@ -277,12 +280,31 @@
     padding: 2.5rem;
     position: relative;
     transition: all 0.3s var(--ease-tech);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.saas-cta {
+    /* Auto margin removed here, moved to tags */
+    margin-top: 1rem;
+}
+
+.saas-tags {
+    margin-top: auto;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
 }
 
 .saas-card:hover {
     transform: translateY(-4px);
     border-color: var(--color-border-active);
     box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+    background: #FFFFFF;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
 }
 
 .saas-badge {
