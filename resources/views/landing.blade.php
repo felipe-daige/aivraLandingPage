@@ -64,40 +64,16 @@
     <div class="bg-grid"></div>
     <canvas id="bg-canvas"></canvas>
 
-    <!-- Navbar -->
-    <nav class="navbar">
-        <a href="#" class="logo-container" style="text-decoration: none; color: inherit;">
-            <img src="{{ asset('assets/img/Logo.svg') }}" alt="Aivra Logo" width="40" height="40" style="object-fit: contain;">
-            <span class="logo-text">Aivra</span>
-        </a>
-
-        <div class="nav-center">
-            <div class="nav-links">
-                <a href="#solucoes">Soluções</a>
-                <a href="#vantagens">Vantagens</a>
-                <a href="#como-funciona">Processo</a>
-                <a href="#faq">FAQ</a>
-                <a href="sobre.html">Quem Somos</a>
-            </div>
-        </div>
-
-        <div class="nav-right">
-            <div class="social-wrapper">
-                <button class="mobile-contacts-toggle" aria-label="Contatos">
-                    Contatos <i class="ph ph-caret-down"></i>
-                </button>
-                <div class="social-icons-nav">
-                    <a href="https://linkedin.com" target="_blank" class="social-icon-nav" aria-label="LinkedIn"><i
-                            class="ph ph-linkedin-logo"></i></a>
-                    <a href="https://instagram.com" target="_blank" class="social-icon-nav" aria-label="Instagram"><i
-                            class="ph ph-instagram-logo"></i></a>
-                    <a href="https://wa.me/5511999999999" target="_blank" class="social-icon-nav" aria-label="WhatsApp"><i
-                            class="ph ph-whatsapp-logo"></i></a>
-                </div>
-            </div>
-            <a href="#" class="btn-primary btn-magnetic btn-ripple small open-modal">Agendar</a>
-        </div>
-    </nav>
+    @include('partials.header', [
+    'navLinks' => [
+    ['href' => '#solucoes', 'label' => 'Soluções'],
+    ['href' => '#vantagens', 'label' => 'Vantagens'],
+    ['href' => '#como-funciona', 'label' => 'Processo'],
+    ['href' => '#faq', 'label' => 'FAQ'],
+    ['href' => 'sobre.html', 'label' => 'Quem Somos'],
+    ],
+    'ctaButton' => '<a href="#" class="btn-primary btn-magnetic btn-ripple small open-modal">Agendar</a>'
+    ])
 
     <!-- NEW 3D HERO SECTION -->
     <div class="cover-container">

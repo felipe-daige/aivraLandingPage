@@ -26,38 +26,23 @@
     <div class="bg-grid"></div>
     <canvas id="bg-canvas"></canvas>
 
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="logo-container">
-            <a href="/" style="text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">
-                <img src="{{ asset('assets/img/Logo.svg') }}" alt="Aivra Logo" width="32" height="32">
-                <span class="logo-text">Aivra</span>
-            </a>
-        </div>
+    <style>
+        .navbar {
+            opacity: 1 !important;
+            pointer-events: all !important;
+            transform: translateX(-50%) translateY(0) !important;
+        }
+    </style>
 
-        <div class="nav-center">
-            <div class="nav-links">
-                <a href="/">Home</a>
-                <a href="/#solucoes">Soluções</a>
-                <a href="/#sobre">Sobre</a>
-            </div>
-        </div>
-
-        <div class="nav-right">
-            <div class="social-wrapper">
-                <div class="social-icons-nav">
-                    <a href="https://linkedin.com" target="_blank" class="social-icon-nav" aria-label="LinkedIn"><i
-                            class="ph ph-linkedin-logo"></i></a>
-                    <a href="https://instagram.com" target="_blank" class="social-icon-nav" aria-label="Instagram"><i
-                            class="ph ph-instagram-logo"></i></a>
-                    <a href="https://wa.me/5511999999999" target="_blank" class="social-icon-nav" aria-label="WhatsApp"><i
-                            class="ph ph-whatsapp-logo"></i></a>
-                </div>
-            </div>
-            <!-- Removed Agendar button here to avoid confusion or circular link? Keeping it is also fine. -->
-            <a href="#" class="btn-primary small" onclick="document.getElementById('name').focus(); return false;">Contatar</a>
-        </div>
-    </nav>
+    @include('partials.header', [
+    'navLinks' => [
+    ['href' => '/', 'label' => 'Home'],
+    ['href' => '/#solucoes', 'label' => 'Soluções'],
+    ['href' => '/#sobre', 'label' => 'Sobre'],
+    ['href' => '/#faq', 'label' => 'FAQ'],
+    ],
+    'ctaButton' => '<a href="#" class="btn-primary small" onclick="document.getElementById(\'name\').focus(); return false;">Contatar</a>'
+    ])
 
     <section class="section contact-hero">
         <div class="container">
