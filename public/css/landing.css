@@ -112,6 +112,34 @@ h6 {
   pointer-events: none;
 }
 
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.75rem 0.75rem;
+    /* Reduced padding on mobile */
+    width: 98%;
+    /* Slightly wider on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.75rem 0.6rem;
+    /* Tighter padding */
+    width: 98%;
+  }
+
+  .nav-right {
+    gap: 0.5rem;
+    /* Reduce gap between button and contacts */
+  }
+
+  .btn-primary.small {
+    padding: 0.5rem 1rem;
+    /* Smaller button padding */
+    font-size: 0.8rem;
+  }
+}
+
 .navbar.scrolled {
   background: rgba(255, 255, 255, 0.98);
   box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.1);
@@ -120,6 +148,14 @@ h6 {
   opacity: 1;
   pointer-events: all;
   transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width: 480px) {
+  .navbar.scrolled {
+    padding: 0.6rem 0.6rem;
+    /* Match tighter padding */
+    width: 98%;
+  }
 }
 
 .logo-container {
@@ -559,13 +595,12 @@ body {
   align-items: center;
   gap: 2rem;
   padding: 1.5rem 2rem;
-  background: rgba(255, 255, 255, 0.5);
-  /* Soft Glass */
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  background: #FFFFFF;
+  /* Solid White */
+  border: 1px solid rgba(255, 255, 255, 1);
   border-radius: var(--radius-pill);
-  backdrop-filter: blur(8px);
   width: fit-content;
-  box-shadow: 0 4px 20px -5px rgba(15, 23, 42, 0.05);
+  box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.1);
 }
 
 .stat-item {
@@ -1607,8 +1642,21 @@ body {
 }
 
 .accordion-item {
-  border-bottom: 1px solid #E2E8F0;
+  background: white;
+  /* Solid background for readability */
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
   margin-bottom: 1rem;
+  padding: 0 1.5rem;
+  /* Internal padding */
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.accordion-item:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
 }
 
 .accordion-header {
@@ -4264,4 +4312,113 @@ html {
 
 .delay-500 {
   animation-delay: 0.5s;
+}
+
+/* ========== CONTACT PAGE ========== */
+.contact-hero {
+  padding-top: 120px;
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+.contact-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #1E293B 0%, #334155 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 3rem;
+  margin-top: 2rem;
+  align-items: start;
+}
+
+.contact-form-wrapper {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
+  border: 1px solid #E2E8F0;
+}
+
+.contact-social-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
+  border: 1px solid #E2E8F0;
+  position: sticky;
+  top: 100px;
+}
+
+.contact-social-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-text-main);
+}
+
+.social-links-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.social-link-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #F8FAFC;
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--color-text-main);
+  font-weight: 500;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.social-link-item:hover {
+  background: white;
+  border-color: var(--color-primary);
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.social-link-item i {
+  font-size: 1.5rem;
+  color: #64748B;
+  transition: color 0.3s ease;
+}
+
+.social-link-item:hover i {
+  color: var(--color-primary);
+}
+
+.social-link-item[href*="linkedin"]:hover i {
+  color: #0077b5;
+}
+
+.social-link-item[href*="instagram"]:hover i {
+  color: #E1306C;
+}
+
+.social-link-item[href*="wa.me"]:hover i {
+  color: #25D366;
+}
+
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .contact-social-card {
+    position: static;
+    order: -1;
+  }
 }

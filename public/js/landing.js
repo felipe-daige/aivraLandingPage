@@ -160,6 +160,7 @@ accordionItems.forEach(item => {
 });
 
 // ========== MODAL & MULTI-STEP FORM ==========
+// ========== MODAL LOGIC ==========
 const modal = document.getElementById('lead-modal');
 const openBtns = document.querySelectorAll('.open-modal');
 const closeBtn = document.querySelector('.close-modal');
@@ -185,9 +186,12 @@ if (modal) {
             modal.classList.remove('active');
         }
     });
+}
 
-    // Multi-step form logic
-    const form = document.getElementById('lead-form');
+// ========== MULTI-STEP FORM LOGIC ==========
+const form = document.getElementById('lead-form');
+
+if (form) {
     const steps = document.querySelectorAll('.form-step');
     const progressFill = document.getElementById('progress-fill');
     const progressText = document.getElementById('progress-text');
@@ -195,27 +199,75 @@ if (modal) {
     const btnNext = document.getElementById('btn-next');
     const btnSubmit = document.getElementById('btn-submit');
 
-    let currentStep = 1;
-    const totalSteps = steps.length;
+    // Build step sequence — detect if branching steps exist
+    const hasBranching = document.querySelector('.form-step[data-step="2a"]') !== null;
+
+    // Default linear sequence (no branching, e.g. landing page modal)
+    let stepSequence = [];
+    steps.forEach(s => {
+        const id = s.dataset.step;
+        // Skip branch steps from default sequence
+        if (id !== '2a' && id !== '2b') {
+            stepSequence.push(id);
+        }
+    });
+    // If no branching, include all steps linearly
+    if (!hasBranching) {
+        stepSequence = [];
+        steps.forEach(s => stepSequence.push(s.dataset.step));
+    }
+
+    let currentStepIndex = 0;
+
+    function getCurrentStepId() {
+        return stepSequence[currentStepIndex];
+    }
+
+    function rebuildSequence() {
+        if (!hasBranching) return;
+
+        const personType = form.querySelector('input[name="person_type"]:checked');
+        const branch = personType ? personType.value : null;
+
+        // Rebuild: 1, 2, (2a or 2b), 3, 4, 5, ...
+        const baseSteps = [];
+        steps.forEach(s => {
+            const id = s.dataset.step;
+            if (id !== '2a' && id !== '2b') {
+                baseSteps.push(id);
+            }
+        });
+
+        // Insert the correct branch after step "2"
+        const idx2 = baseSteps.indexOf('2');
+        if (idx2 !== -1 && branch) {
+            const branchStep = branch === 'pf' ? '2a' : '2b';
+            baseSteps.splice(idx2 + 1, 0, branchStep);
+        }
+
+        stepSequence = baseSteps;
+    }
 
     function updateFormUI() {
+        const activeId = getCurrentStepId();
+
         // Update steps visibility
         steps.forEach(step => {
-            const stepNum = parseInt(step.dataset.step);
-            step.classList.toggle('active', stepNum === currentStep);
+            step.classList.toggle('active', step.dataset.step === activeId);
         });
 
         // Update progress bar
-        const progressPercent = (currentStep / totalSteps) * 100;
+        const totalVisible = stepSequence.length;
+        const progressPercent = ((currentStepIndex + 1) / totalVisible) * 100;
         if (progressFill) progressFill.style.width = `${progressPercent}%`;
 
         // Update progress text
-        if (progressText) progressText.textContent = `Etapa ${currentStep} de ${totalSteps}`;
+        if (progressText) progressText.textContent = `Etapa ${currentStepIndex + 1} de ${totalVisible}`;
 
         // Update navigation buttons
-        if (btnPrev) btnPrev.disabled = currentStep === 1;
+        if (btnPrev) btnPrev.disabled = currentStepIndex === 0;
 
-        if (currentStep === totalSteps) {
+        if (currentStepIndex === stepSequence.length - 1) {
             if (btnNext) btnNext.style.display = 'none';
             if (btnSubmit) btnSubmit.style.display = 'flex';
         } else {
@@ -223,19 +275,36 @@ if (modal) {
             if (btnSubmit) btnSubmit.style.display = 'none';
         }
 
-        // Scroll modal to top
-        const modalContent = modal.querySelector('.modal-content');
-        if (modalContent) {
-            modalContent.scrollTop = 0;
+        // Scroll modal to top if inside modal
+        if (modal) {
+            const modalContent = modal.querySelector('.modal-content');
+            if (modalContent) {
+                modalContent.scrollTop = 0;
+            }
         }
     }
 
-    function validateStep(stepNum) {
-        const currentStepEl = document.querySelector(`.form-step[data-step="${stepNum}"]`);
+    function validateStep(stepId) {
+        const currentStepEl = document.querySelector(`.form-step[data-step="${stepId}"]`);
+        if (!currentStepEl) return true;
+
         const requiredInputs = currentStepEl.querySelectorAll('input[required], textarea[required], select[required]');
         let isValid = true;
 
         requiredInputs.forEach(input => {
+            // For radio groups, check if any in the group is selected
+            if (input.type === 'radio') {
+                const groupName = input.name;
+                const groupChecked = currentStepEl.querySelector(`input[name="${groupName}"]:checked`);
+                if (!groupChecked) {
+                    isValid = false;
+                    input.closest('.radio-group')?.classList.add('error');
+                } else {
+                    input.closest('.radio-group')?.classList.remove('error');
+                }
+                return;
+            }
+
             if (!input.value.trim()) {
                 isValid = false;
                 input.classList.add('error');
@@ -253,15 +322,24 @@ if (modal) {
         return isValid;
     }
 
-    function resetFormToStep(step) {
-        currentStep = step;
+    window.resetFormToStep = function (step) {
+        currentStepIndex = 0;
         updateFormUI();
-    }
+    };
 
     if (btnNext) {
         btnNext.addEventListener('click', () => {
-            if (validateStep(currentStep) && currentStep < totalSteps) {
-                currentStep++;
+            const currentId = getCurrentStepId();
+
+            if (!validateStep(currentId)) return;
+
+            // After step 2 (type selector), rebuild the sequence with the chosen branch
+            if (currentId === '2' && hasBranching) {
+                rebuildSequence();
+            }
+
+            if (currentStepIndex < stepSequence.length - 1) {
+                currentStepIndex++;
                 updateFormUI();
             }
         });
@@ -269,75 +347,81 @@ if (modal) {
 
     if (btnPrev) {
         btnPrev.addEventListener('click', () => {
-            if (currentStep > 1) {
-                currentStep--;
+            if (currentStepIndex > 0) {
+                currentStepIndex--;
+                // If we went back to step 2 from a branch, keep sequence intact
                 updateFormUI();
             }
         });
     }
 
-    if (form) {
-        // Prevent Enter from submitting - instead go to next step
-        form.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' && e.target.tagName !== 'TEXTAREA') {
-                e.preventDefault();
-                if (currentStep < totalSteps) {
-                    if (validateStep(currentStep)) {
-                        currentStep++;
-                        updateFormUI();
-                    }
+    // Prevent Enter from submitting - instead go to next step
+    form.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && e.target.tagName !== 'TEXTAREA') {
+            e.preventDefault();
+            const currentId = getCurrentStepId();
+            if (validateStep(currentId) && currentStepIndex < stepSequence.length - 1) {
+                if (currentId === '2' && hasBranching) {
+                    rebuildSequence();
                 }
+                currentStepIndex++;
+                updateFormUI();
             }
+        }
+    });
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // Collect all form data
+        const formData = new FormData(form);
+        const data = {};
+        formData.forEach((value, key) => {
+            data[key] = value;
         });
 
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
+        const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
 
-            // Collect all form data
-            const formData = new FormData(form);
-            const data = {};
-            formData.forEach((value, key) => {
-                data[key] = value;
+        try {
+            const response = await fetch('/leads', { // URL to be confirmed/adjusted by backend
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                    'X-CSRF-TOKEN': csrfToken
+                },
+                body: JSON.stringify(data)
             });
 
-            const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
+            if (response.ok) {
+                // Show success message
+                // Check if we are in a modal or inline
+                const successContainer = modal ? modal.querySelector('.modal-content') : form.parentElement;
 
-            try {
-                const response = await fetch('/leads', { // URL to be confirmed/adjusted by backend
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json',
-                        'X-CSRF-TOKEN': csrfToken
-                    },
-                    body: JSON.stringify(data)
-                });
-
-                if (response.ok) {
-                    // Show success message
-                    const modalContent = modal.querySelector('.modal-content');
-                    modalContent.innerHTML = `
+                if (successContainer) {
+                    successContainer.innerHTML = `
                         <div class="form-success">
                         <div class="success-icon">
                             <i class="ph ph-check-circle"></i>
                         </div>
                         <h2>Solicitação Enviada!</h2>
-                        <p>Recebemos suas informações e entraremos em contato em breve para agendar sua análise tecnológica.</p>
+                        <p>Recebemos suas informações e entraremos em contato em breve.</p>
                         <button type="button" class="btn-primary" onclick="window.location.reload();">
-                            Fechar
+                            Voltar
                         </button>
                         </div>
                     `;
-                } else {
-                    console.error('Form submission failed:', response.statusText);
-                    alert('Ocorreu um erro ao enviar. Por favor, tente novamente.');
                 }
-            } catch (error) {
-                console.error('Network error:', error);
-                alert('Erro de conexão. Verifique sua internet.');
+
+            } else {
+                console.error('Form submission failed:', response.statusText);
+                alert('Ocorreu um erro ao enviar. Por favor, tente novamente.');
             }
-        });
-    }
+        } catch (error) {
+            console.error('Network error:', error);
+            alert('Erro de conexão. Verifique sua internet.');
+        }
+    });
 
     // Remove error state on input
     document.querySelectorAll('.form-step input, .form-step textarea').forEach(input => {
@@ -472,3 +556,53 @@ if (scrollIndicator) {
         }
     });
 }
+
+// ========== INPUT MASKS (Phone & CNPJ) ==========
+function applyMask(input, maskFn) {
+    if (!input) return;
+    input.addEventListener('input', () => {
+        const cursorPos = input.selectionStart;
+        const oldLen = input.value.length;
+        input.value = maskFn(input.value);
+        const newLen = input.value.length;
+        const newPos = cursorPos + (newLen - oldLen);
+        input.setSelectionRange(newPos, newPos);
+    });
+}
+
+function phoneMask(value) {
+    const digits = value.replace(/\D/g, '').slice(0, 11);
+    if (digits.length <= 2) return digits.length ? `(${digits}` : '';
+    if (digits.length <= 7) return `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
+    return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
+}
+
+function cnpjMask(value) {
+    const digits = value.replace(/\D/g, '').slice(0, 14);
+    if (digits.length <= 2) return digits;
+    if (digits.length <= 5) return `${digits.slice(0, 2)}.${digits.slice(2)}`;
+    if (digits.length <= 8) return `${digits.slice(0, 2)}.${digits.slice(2, 5)}.${digits.slice(5)}`;
+    if (digits.length <= 12) return `${digits.slice(0, 2)}.${digits.slice(2, 5)}.${digits.slice(5, 8)}/${digits.slice(8)}`;
+    return `${digits.slice(0, 2)}.${digits.slice(2, 5)}.${digits.slice(5, 8)}/${digits.slice(8, 12)}-${digits.slice(12)}`;
+}
+
+applyMask(document.getElementById('whatsapp'), phoneMask);
+applyMask(document.getElementById('cnpj'), cnpjMask);
+
+function cpfMask(value) {
+    const digits = value.replace(/\D/g, '').slice(0, 11);
+    if (digits.length <= 3) return digits;
+    if (digits.length <= 6) return `${digits.slice(0, 3)}.${digits.slice(3)}`;
+    if (digits.length <= 9) return `${digits.slice(0, 3)}.${digits.slice(3, 6)}.${digits.slice(6)}`;
+    return `${digits.slice(0, 3)}.${digits.slice(3, 6)}.${digits.slice(6, 9)}-${digits.slice(9)}`;
+}
+
+function dateMask(value) {
+    const digits = value.replace(/\D/g, '').slice(0, 8);
+    if (digits.length <= 2) return digits;
+    if (digits.length <= 4) return `${digits.slice(0, 2)}/${digits.slice(2)}`;
+    return `${digits.slice(0, 2)}/${digits.slice(2, 4)}/${digits.slice(4)}`;
+}
+
+applyMask(document.getElementById('cpf'), cpfMask);
+applyMask(document.getElementById('birthdate'), dateMask);

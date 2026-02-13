@@ -320,6 +320,13 @@
     border-radius: 100px;
 }
 
+.saas-badge.new {
+    background: rgba(37, 99, 235, 0.1);
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 10px rgba(37, 99, 235, 0.2);
+}
+
 /* --- CTA FINAL CARD (Tech Override) --- */
 .cta-final-card {
     background: #0F172A;
@@ -588,5 +595,112 @@
 
     .luminous-card {
         padding: 4rem 1.5rem;
+    }
+}
+
+/* Compact Tags Modification */
+.panel-tags.compact {
+    margin-top: 1rem;
+}
+
+.panel-tags.compact span {
+    padding: 0.15rem 0.4rem;
+    font-size: 0.7rem;
+}
+
+/* --- MOBILE CONTACTS WRAPPER --- */
+.social-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.mobile-contacts-toggle {
+    display: none;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: inherit;
+    padding: 0.4rem 0.75rem;
+    /* Slightly reduced padding */
+    border-radius: 20px;
+    font-size: 0.8rem;
+    /* Slightly smaller font */
+    font-weight: 500;
+    cursor: pointer;
+    font-family: var(--font-main);
+    transition: all 0.3s ease;
+    margin-right: 0.25rem;
+    /* Reduced margin */
+}
+
+.mobile-contacts-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.mobile-contacts-toggle i {
+    transition: transform 0.3s ease;
+}
+
+.mobile-contacts-toggle.active {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.mobile-contacts-toggle.active i {
+    transform: rotate(180deg);
+}
+
+@media (max-width: 1024px) {
+    .mobile-contacts-toggle {
+        display: none;
+        /* Hidden as requested */
+    }
+
+    .social-icons-nav {
+        display: none;
+        position: absolute;
+        top: calc(100% + 10px);
+        right: 0;
+        background: rgba(15, 23, 42, 0.95);
+        backdrop-filter: blur(12px);
+        padding: 1rem;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3);
+        flex-direction: row;
+        gap: 1rem;
+        z-index: 100;
+        width: max-content;
+        justify-content: center;
+    }
+
+    .social-icons-nav.active {
+        display: flex;
+        animation: fadeSlideDown 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .social-icons-nav .social-icon-nav {
+        color: #94A3B8;
+        font-size: 1.5rem;
+        transition: color 0.2s;
+    }
+
+    .social-icons-nav .social-icon-nav:hover {
+        color: var(--color-primary);
+        transform: translateY(-2px);
+    }
+}
+
+@keyframes fadeSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

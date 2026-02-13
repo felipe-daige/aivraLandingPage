@@ -15,7 +15,7 @@
     <meta property="og:url" content="https://aivra.com.br/" />
     <meta property="og:title" content="Aivra - Automação Inteligente & IA para Negócios" />
     <meta property="og:description"
-        content="Escale sua operação com previsibilidade. Arquitetura de dados e automação para eliminar gargalos e aumentar ROI." />
+        content="Desenvolvemos softwares personalizados e ecossistemas digitais que integram estratégia, automação e inteligência para escalar seu negócio." />
     <meta property="og:image" content="https://aivra.com.br/og-image.jpg" />
 
     <!-- Twitter -->
@@ -23,7 +23,7 @@
     <meta property="twitter:url" content="https://aivra.com.br/" />
     <meta property="twitter:title" content="Aivra - Automação Inteligente & IA" />
     <meta property="twitter:description"
-        content="Escale sua operação com previsibilidade. Arquitetura de dados e automação para eliminar gargalos." />
+        content="Desenvolvemos softwares personalizados e ecossistemas digitais que integram estratégia, automação e inteligência para escalar seu negócio." />
     <meta property="twitter:image" content="https://aivra.com.br/og-image.jpg" />
 
     <meta name="robots" content="index, follow" />
@@ -82,13 +82,18 @@
         </div>
 
         <div class="nav-right">
-            <div class="social-icons-nav">
-                <a href="https://linkedin.com" target="_blank" class="social-icon-nav" aria-label="LinkedIn"><i
-                        class="ph ph-linkedin-logo"></i></a>
-                <a href="https://instagram.com" target="_blank" class="social-icon-nav" aria-label="Instagram"><i
-                        class="ph ph-instagram-logo"></i></a>
-                <a href="https://wa.me/5511999999999" target="_blank" class="social-icon-nav" aria-label="WhatsApp"><i
-                        class="ph ph-whatsapp-logo"></i></a>
+            <div class="social-wrapper">
+                <button class="mobile-contacts-toggle" aria-label="Contatos">
+                    Contatos <i class="ph ph-caret-down"></i>
+                </button>
+                <div class="social-icons-nav">
+                    <a href="https://linkedin.com" target="_blank" class="social-icon-nav" aria-label="LinkedIn"><i
+                            class="ph ph-linkedin-logo"></i></a>
+                    <a href="https://instagram.com" target="_blank" class="social-icon-nav" aria-label="Instagram"><i
+                            class="ph ph-instagram-logo"></i></a>
+                    <a href="https://wa.me/5511999999999" target="_blank" class="social-icon-nav" aria-label="WhatsApp"><i
+                            class="ph ph-whatsapp-logo"></i></a>
+                </div>
             </div>
             <a href="#" class="btn-primary btn-magnetic btn-ripple small open-modal">Agendar</a>
         </div>
@@ -140,8 +145,7 @@
                     <span class="text-gradient">sem limites.</span>
                 </h1>
                 <p class="hero-sub" style="color: #475569;">
-                    Construímos a arquitetura de dados e automação que permite sua empresa escalar com fluidez,
-                    previsibilidade e zero atrito.
+                    Desenvolvemos softwares personalizados e ecossistemas digitais que integram estratégia, automação e inteligência para escalar seu negócio.
                 </p>
 
                 <div class="cta-group">
@@ -248,8 +252,8 @@
             <div class="tech-item"><i class="ph ph-share-network"></i><span>Otimização de Processos</span></div>
             <div class="tech-item"><i class="ph ph-cloud"></i><span>Arquitetura de Infraestrutura Gerenciada</span></div>
             <div class="tech-item"><i class="ph ph-tag"></i><span>Soluções Personalizadas</span></div>
-            <div class="tech-item"><i class="ph ph-file-js"></i><span>Desenvolvimento de Software</span></div>
-            <div class="tech-item"><i class="ph ph-robot"></i><span>Eficiência Operacional</span></div>
+            <div class="tech-item"><i class="ph ph-code"></i><span>Desenvolvimento de Software</span></div>
+            <div class="tech-item"><i class="ph ph-trend-up"></i><span>Eficiência Operacional</span></div>
             <div class="tech-item"><i class="ph ph-database"></i><span>Infraestrutura de Dados</span></div>
 
             <!-- Duplicated Set for Infinite Scroll -->
@@ -258,8 +262,8 @@
             <div class="tech-item"><i class="ph ph-share-network"></i><span>Otimização de Processos</span></div>
             <div class="tech-item"><i class="ph ph-cloud"></i><span>Arquitetura de Infraestrutura Gerenciada</span></div>
             <div class="tech-item"><i class="ph ph-tag"></i><span>Soluções Personalizadas</span></div>
-            <div class="tech-item"><i class="ph ph-file-js"></i><span>Desenvolvimento de Software</span></div>
-            <div class="tech-item"><i class="ph ph-robot"></i><span>Eficiência Operacional</span></div>
+            <div class="tech-item"><i class="ph ph-code"></i><span>Desenvolvimento de Software</span></div>
+            <div class="tech-item"><i class="ph ph-trend-up"></i><span>Eficiência Operacional</span></div>
             <div class="tech-item"><i class="ph ph-database"></i><span>Infraestrutura de Dados</span></div>
         </div>
     </section>
@@ -268,26 +272,25 @@
     <section id="solucoes" class="section">
         <div class="container">
             <div class="section-header reveal">
-                <h2>Ecossistema de Eficiência</h2>
+                <h2>Tecnologia que Gera Receita</h2>
                 <p>Não vendemos ferramentas isoladas. Construímos a infraestrutura completa para sua empresa operar em
                     alta performance.</p>
             </div>
 
             <div class="control-panel-grid reveal delay-100">
-                <!-- Main Feature: Automation -->
+                <!-- Main Feature: Business Process Automation -->
                 <div class="panel-item primary-panel technical-card">
                     <div class="panel-header">
                         <div class="panel-icon primary"><i class="ph ph-gear-six"></i></div>
                         <div class="panel-status"><span class="status-dot"></span>ACTIVE</div>
                     </div>
                     <div class="panel-content">
-                        <h3>Automação "End-to-End"</h3>
-                        <p>Eliminamos silos operacionais. Conectamos Marketing, Vendas e Financeiro em um fluxo contínuo
-                            e sem intervenção humana para tarefas repetitivas.</p>
-                        <div class="panel-tags">
-                            <span>Financeiro</span>
-                            <span>Onboarding</span>
-                            <span>Logística</span>
+                        <h3>Automação de Processos</h3>
+                        <p><strong>Orquestração digital completa.</strong> Transformamos processos manuais em <strong>eficiência integrada</strong>, otimizando recursos para garantir <strong>máxima rentabilidade.</strong></p>
+                        <div class="panel-tags compact">
+                            <span>Eficiência</span>
+                            <span>Redução de Custos</span>
+                            <span>Agilidade</span>
                         </div>
                     </div>
                     <div class="panel-visual">
@@ -295,38 +298,92 @@
                     </div>
                 </div>
 
-                <!-- AI Intelligence -->
+                <!-- Custom Software Development -->
                 <div class="panel-item technical-card">
                     <div class="panel-header">
-                        <div class="panel-icon secondary"><i class="ph ph-brain"></i></div>
+                        <div class="panel-icon secondary"><i class="ph ph-code"></i></div>
                     </div>
                     <div class="panel-content">
-                        <h3>Inteligência Artificial Corporativa</h3>
-                        <p>Agentes de IA que leem contratos, atendem suporte L1/L2 e analisam dados de vendas em tempo
-                            real.</p>
+                        <h3>Desenvolvimento de Software</h3>
+                        <p><strong>Desenvolvimento de software sob medida.</strong> De aplicativos móveis a <strong>sistemas complexos</strong>, criamos a <strong>tecnologia exata</strong> que seu negócio precisa para escalar.</p>
+                        <div class="panel-tags compact">
+                            <span>Web Design</span>
+                            <span>Sistemas</span>
+                            <span>Apps</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Data/Analytics -->
+                <!-- Data Intelligence (BI) -->
                 <div class="panel-item technical-card">
                     <div class="panel-header">
-                        <div class="panel-icon accent"><i class="ph ph-chart-bar"></i></div>
+                        <div class="panel-icon accent"><i class="ph ph-chart-polar"></i></div>
                     </div>
                     <div class="panel-content">
-                        <h3>Data Intelligence</h3>
-                        <p>Dashboards que mostram a saúde do negócio, não métricas de vaidade. LTV, CAC e Margem em
-                            tempo real.</p>
+                        <h3>Inteligência de Dados (BI)</h3>
+                        <p><strong>Decisões baseadas em fatos.</strong> Criamos <strong>inteligência de dados</strong> que monitora sua operação hoje e <strong>projeta tendências</strong> para você <strong>antecipar o mercado.</strong></p>
+                        <div class="panel-tags compact">
+                            <span>Visão 360º</span>
+                            <span>Predição</span>
+                            <span>Tendências</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Infrastructure -->
+                <!-- Infrastructure & DevOps -->
                 <div class="panel-item wide-panel technical-card">
                     <div class="panel-content horizontal">
                         <div class="icon-wrapper dark"><i class="ph ph-cloud"></i></div>
                         <div class="text-content">
-                            <h3>Infraestrutura & Cloud</h3>
-                            <p>Arquitetura escalável na AWS/Azure. Preparamos seu terreno para suportar crescimento
-                                exponencial sem quedas.</p>
+                            <h3>Infraestrutura & Segurança</h3>
+                            <p><strong>Sua operação nunca para.</strong> Projetamos <strong>arquiteturas de nuvem resilientes</strong> e seguras, garantindo que seu negócio <strong>escale sem falhas</strong> ou vulnerabilidades.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Custom AI & Machine Learning -->
+                <div class="panel-item technical-card">
+                    <div class="panel-header">
+                        <div class="panel-icon secondary"><i class="ph ph-robot"></i></div>
+                    </div>
+                    <div class="panel-content">
+                        <h3>IA & Machine Learning</h3>
+                        <p><strong>Vantagem Competitiva Real.</strong> De LLMs próprios a algoritmos preditivos. Transformamos seu histórico de dados em <strong>ferramentas exclusivas</strong> que colocam sua empresa <strong>anos à frente</strong> da concorrência.</p>
+                        <div class="panel-tags compact">
+                            <span>Modelos Próprios</span>
+                            <span>Agentes Autônomos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Strategic Consulting -->
+                <div class="panel-item technical-card">
+                    <div class="panel-header">
+                        <div class="panel-icon primary"><i class="ph ph-strategy"></i></div>
+                    </div>
+                    <div class="panel-content">
+                        <h3>Consultoria Estratégica</h3>
+                        <p><strong>Antes de automatizar, otimizamos.</strong> Mapeamos profundamente sua operação para <strong>identificar fricções invisíveis</strong> e desenhar um roadmap tecnológico que <strong>Maximize o ROI.</strong></p>
+                        <div class="panel-tags compact">
+                            <span>Mapeamento</span>
+                            <span>Engenharia</span>
+                            <span>Roadmap</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Security & Governance -->
+                <div class="panel-item technical-card">
+                    <div class="panel-header">
+                        <div class="panel-icon accent"><i class="ph ph-shield-check"></i></div>
+                    </div>
+                    <div class="panel-content">
+                        <h3>Proteção de Dados & Privacidade</h3>
+                        <p><strong>Sua blindagem digital.</strong> Implementamos <strong>segurança proativa</strong> e governança compliance-first para proteger seus <strong>ativos mais valiosos.</strong></p>
+                        <div class="panel-tags compact">
+                            <span>Proteção de Dados</span>
+                            <span>Segurança</span>
+                            <span>Privacidade</span>
                         </div>
                     </div>
                 </div>
@@ -338,9 +395,8 @@
     <section id="solucoes-saas" class="section bg-surface">
         <div class="container">
             <div class="section-header reveal">
-                <h2>Soluções prontas para acelerar resultados</h2>
-                <p>Além de projetos sob medida, desenvolvemos SaaS e soluções proprietárias focadas em resolver dores
-                    operacionais recorrentes de forma rápida e escalável.</p>
+                <h2>Soluções que Resolvem Dores Reais</h2>
+                <p>Produtos validados que eliminam gargalos específicos da sua operação desde o primeiro dia de uso.</p>
             </div>
             <div class="saas-grid">
                 <div class="saas-card glassmorphism reveal delay-100">
@@ -349,8 +405,8 @@
                         <img src="{{ asset('assets/img/Logo Imobify.svg') }}" alt="Imobify Logo" class="saas-logo-img">
                         <h3>Imobify</h3>
                     </div>
-                    <p>Chega de prints de comprovantes perdidos. Gerencie todos os seus aluguéis direto no WhatsApp:
-                        recibos automáticos, alertas de vencimento e relatórios prontos para o Imposto de Renda.</p>
+                    <p>Automatize a forma de admnistrar seus imóveis. Gerencie todos os seus aluguéis direto no WhatsApp:
+                        recibos automáticos, alertas de vencimento e relatórios prontos para o Imposto de Renda e muito mais!</p>
                     <div class="saas-tags">
                         <span class="tag">WhatsApp</span>
                         <span class="tag">IA</span>
@@ -361,7 +417,25 @@
                     </a>
                 </div>
                 <div class="saas-card glassmorphism reveal delay-200">
-                    <div class="saas-badge active">Novo</div>
+                    <div class="saas-badge new">Novo</div>
+                    <div class="saas-header">
+                        <img src="{{ asset('assets/img/calzapLogo.png') }}" alt="CalZAP Logo" class="saas-logo-img" style="border-radius: 8px;">
+                        <h3
+                            style="font-family: 'Inter', sans-serif; font-weight: 700; letter-spacing: -0.02em; color: #1E293B;">
+                            CalZAP</h3>
+                    </div>
+                    <p>Automação inteligente para WhatsApp que recupera vendas e atende clientes 24/7. Crie fluxos visuais, integre com plataformas de vendas e use IA para transcrever áudios e responder com contexto.</p>
+                    <div class="saas-tags">
+                        <span class="tag">WhatsApp</span>
+                        <span class="tag">Vendas</span>
+                        <span class="tag">IA</span>
+                    </div>
+                    <a href="#" class="saas-cta open-modal">
+                        Saiba Mais <i class="ph ph-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="saas-card glassmorphism reveal delay-300">
+                    <div class="saas-badge">Em Breve</div>
                     <div class="saas-header">
                         <img src="{{ asset('assets/img/Logo FiscalDock.svg') }}" alt="FiscalDock Logo" class="saas-logo-img">
                         <h3
@@ -380,24 +454,6 @@
                         Conhecer Solução <i class="ph ph-arrow-right"></i>
                     </a>
                 </div>
-                <div class="saas-card glassmorphism reveal delay-300">
-                    <div class="saas-badge active">Novo</div>
-                    <div class="saas-header">
-                        <img src="{{ asset('assets/img/calzapLogo.png') }}" alt="CalZAP Logo" class="saas-logo-img" style="border-radius: 8px;">
-                        <h3
-                            style="font-family: 'Inter', sans-serif; font-weight: 700; letter-spacing: -0.02em; color: #1E293B;">
-                            CalZAP</h3>
-                    </div>
-                    <p>Automação inteligente para WhatsApp que recupera vendas e atende clientes 24/7. Crie fluxos visuais, integre com plataformas de vendas e use IA para transcrever áudios e responder com contexto.</p>
-                    <div class="saas-tags">
-                        <span class="tag">WhatsApp</span>
-                        <span class="tag">Vendas</span>
-                        <span class="tag">IA</span>
-                    </div>
-                    <a href="#" class="saas-cta open-modal">
-                        Saiba Mais <i class="ph ph-arrow-right"></i>
-                    </a>
-                </div>
             </div>
         </div>
     </section>
@@ -408,32 +464,31 @@
             <div class="about-flow-grid">
                 <div class="about-manifesto reveal">
                     <h2>Arquitetura tecnológica<br>orientada a <span class="highlight-gradient">resultados</span></h2>
-                    <p>Não somos apenas implementadores. Somos arquitetos de um futuro onde sua operação flui sem
-                        gargalos manuais. Transformamos complexidade em simplicidade escalável.</p>
+                    <p>Transformamos complexidade operacional em vantagem competitiva. A Aivra atua como seu braço de inovação, desenhando estruturas que reduzem custos fixos e aumentam a margem de lucro.</p>
                 </div>
 
                 <div class="glass-features reveal delay-100">
                     <div class="glass-feature-card">
                         <div class="gf-icon"><i class="ph ph-chart-polar"></i></div>
                         <div class="gf-content">
-                            <h4>Foco em ROI</h4>
-                            <p>Cada projeto é desenhado para gerar retorno mensurável e visível.</p>
+                            <h4>Foco no Core Business</h4>
+                            <p>Deixe a complexidade técnica conosco e direcione seus melhores talentos para o crescimento.</p>
                         </div>
                     </div>
 
                     <div class="glass-feature-card">
                         <div class="gf-icon"><i class="ph ph-users-three"></i></div>
                         <div class="gf-content">
-                            <h4>Parceria Estratégica</h4>
-                            <p>Atuamos como extensão do seu time, garantindo evolução contínua.</p>
+                            <h4>Tecnologia Proprietária</h4>
+                            <p>Construímos ativos digitais exclusivos que geram valor real e pertencem à sua empresa.</p>
                         </div>
                     </div>
 
                     <div class="glass-feature-card">
                         <div class="gf-icon"><i class="ph ph-infinity"></i></div>
                         <div class="gf-content">
-                            <h4>Execução End-to-End</h4>
-                            <p>Do diagnóstico à operação assistida. Cuidamos de todo o ciclo.</p>
+                            <h4>Visão de Longo Prazo</h4>
+                            <p>Parceria estruturada para sustentar seu crescimento por anos, não apenas projetos pontuais.</p>
                         </div>
                     </div>
                 </div>
@@ -453,29 +508,29 @@
                 <div class="timeline-step reveal delay-100">
                     <div class="step-marker"><span class="step-number">01</span></div>
                     <div class="step-content">
-                        <h3>Diagnóstico Estratégico</h3>
-                        <p>Mapeamos fricções, gargalos e o custo oculto da ineficiência.</p>
+                        <h3>Diagnóstico Operacional</h3>
+                        <p>Mapeamos onde sua empresa perde dinheiro hoje. Identificamos gargalos, redundâncias e processos manuais que travam seu crescimento.</p>
                     </div>
                 </div>
                 <div class="timeline-step reveal delay-200">
                     <div class="step-marker"><span class="step-number">02</span></div>
                     <div class="step-content">
-                        <h3>Desenho da Arquitetura</h3>
-                        <p>Criamos a solução que conecta estratégia, processos e tecnologia.</p>
+                        <h3>Estratégia de Otimização</h3>
+                        <p>Adaptamos ao fluxo ideal do seu negócio, focado exclusivamente em ganho de margem e velocidade operacional através de tecnologias práticas.</p>
                     </div>
                 </div>
                 <div class="timeline-step reveal delay-300">
                     <div class="step-marker"><span class="step-number">03</span></div>
                     <div class="step-content">
-                        <h3>Implementação e Integração</h3>
-                        <p>Executamos com foco em performance, segurança e escalabilidade.</p>
+                        <h3>Implementação da Solução</h3>
+                        <p>Entregamos a tecnologia pronta e integrada. Sem dores de cabeça, prática e já com a solução pronta para uso.</p>
                     </div>
                 </div>
                 <div class="timeline-step reveal delay-400">
                     <div class="step-marker"><span class="step-number">04</span></div>
                     <div class="step-content">
-                        <h3>Evolução Contínua</h3>
-                        <p>Ajustamos e evoluímos conforme o negócio cresce.</p>
+                        <h3>Acompanhamento de Resultados</h3>
+                        <p>Monitoramos o impacto real no seu P&L. Só consideramos o trabalho feito quando o ponteiro do negócio se move.</p>
                     </div>
                 </div>
             </div>
@@ -492,31 +547,30 @@
 
             <div class="metrics-grid">
                 <div class="metric-card reveal delay-100">
-                    <div class="metric-value">30%</div>
-                    <div class="metric-label">Redução média de OPEX</div>
-                    <p class="metric-desc">Cortamos custos operacionais eliminando tarefas manuais redundantes.</p>
+                    <div class="metric-value">100%</div>
+                    <div class="metric-label">Eficiência Operacional</div>
+                    <p class="metric-desc">Detectamos os gargalos invisíveis e eliminamos o retrabalho. Sua empresa rodando leve, sem desperdício de tempo ou recurso.</p>
                 </div>
                 <div class="metric-card reveal delay-200">
                     <div class="metric-value">24/7</div>
-                    <div class="metric-label">Operação Autônoma</div>
-                    <p class="metric-desc">Sua empresa vendendo e atendendo enquanto você dorme. Literalmente.</p>
+                    <div class="metric-label">Receita Passiva</div>
+                    <p class="metric-desc">Sua operação gerando valor ininterruptamente, sem depender da hora-homem.</p>
                 </div>
                 <div class="metric-card reveal delay-300">
                     <div class="metric-value">3x</div>
-                    <div class="metric-label">Aumento de Capacidade</div>
-                    <p class="metric-desc">Escale sua carteira de clientes sem precisar triplicar a equipe.</p>
+                    <div class="metric-label">Valuation</div>
+                    <p class="metric-desc">Empresas tecnológicas valem mais. Criamos os ativos proprietários que multiplicam o valor do seu negócio.</p>
                 </div>
             </div>
 
             <blockquote class="final-quote reveal delay-400">
-                <span class="gradient-sweep">Não entregamos sistemas. <strong>Entregamos estruturas que imprimem
-                        dinheiro.</strong></span>
+                <span class="gradient-sweep">Não vendemos software. <strong>Entregamos a arquitetura digital que sustenta o crescimento do seu negócio.</strong></span>
             </blockquote>
         </div>
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="section">
+    <section id="faq" class="section" style="padding-bottom: 1rem;">
         <div class="container">
             <div class="section-header reveal">
                 <h2>Perguntas Frequentes</h2>
@@ -536,6 +590,24 @@
                 </div>
                 <div class="accordion-item reveal delay-200">
                     <div class="accordion-header">
+                        <h3>A tecnologia desenvolvida pertence à minha empresa?</h3>
+                        <i class="ph ph-caret-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Sim. Diferente de softwares de prateleira, desenvolvemos ativos proprietários sob medida. O código, a inteligência e toda a arquitetura pertencem ao seu negócio — aumentando seu valuation e independência tecnológica.</p>
+                    </div>
+                </div>
+                <div class="accordion-item reveal delay-200">
+                    <div class="accordion-header">
+                        <h3>Preciso trocar meu ERP ou CRM atual?</h3>
+                        <i class="ph ph-caret-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Não. Nossa especialidade é orquestrar sistemas existentes. Criamos camadas de inteligência que conectam seus softwares atuais, extraindo valor sem o caos de grandes migrações.</p>
+                    </div>
+                </div>
+                <div class="accordion-item reveal delay-300">
+                    <div class="accordion-header">
                         <h3>Quanto tempo leva para implementar uma solução?</h3>
                         <i class="ph ph-caret-down"></i>
                     </div>
@@ -547,16 +619,14 @@
                 </div>
                 <div class="accordion-item reveal delay-300">
                     <div class="accordion-header">
-                        <h3>Vocês oferecem suporte contínuo após a implementação?</h3>
+                        <h3>Como funciona a evolução do projeto?</h3>
                         <i class="ph ph-caret-down"></i>
                     </div>
                     <div class="accordion-content">
-                        <p>Sim. Oferecemos planos de evolução contínua que incluem monitoramento, ajustes, novas
-                            automações e consultoria estratégica. Nosso objetivo é ser parceiro de longo prazo, não
-                            apenas um fornecedor de projeto.</p>
+                        <p>A tecnologia nunca para. Além do suporte técnico, oferecemos squads de evolução contínua que monitoram performance, implementam melhorias e garantem que sua arquitetura escale conforme o crescimento do negócio.</p>
                     </div>
                 </div>
-                <div class="accordion-item reveal delay-300">
+                <div class="accordion-item reveal delay-400">
                     <div class="accordion-header">
                         <h3>Como vocês garantem ROI nos projetos?</h3>
                         <i class="ph ph-caret-down"></i>
@@ -568,11 +638,15 @@
                     </div>
                 </div>
             </div>
+
+            <div class="reveal delay-500" style="text-align: center; margin-top: 3rem;">
+                <a href="/contato" class="btn-primary">Fale Conosco</a>
+            </div>
         </div>
     </section>
 
     <!-- Final CTA (Luminous Card) -->
-    <section id="cta-card-section" class="section" style="padding-bottom: 8rem;">
+    <section id="cta-card-section" class="section" style="padding-top: 0; padding-bottom: 2rem;">
         <div class="container">
             <div class="luminous-cta-wrapper reveal">
                 <div class="luminous-card">
@@ -660,22 +734,27 @@
                     </div>
                 </div>
 
-                <!-- SEÇÃO 2: PERFIL & PODER DE DECISÃO -->
+                <!-- SEÇÃO 2: DADOS DA EMPRESA -->
                 <div class="form-step" data-step="2">
                     <div class="step-header">
                         <span class="step-label">Etapa 2 de 8</span>
-                        <h2>Perfil & Poder de Decisão</h2>
-                        <p>Queremos entender seu contexto na empresa.</p>
+                        <h2>Dados da Empresa</h2>
+                        <p>Informações essenciais para entendermos o seu negócio.</p>
                     </div>
                     <div class="form-group">
-                        <label for="company">Empresa</label>
+                        <label for="company">Razão Social / Nome Fantasia *</label>
                         <div class="input-wrapper"><i class="ph ph-buildings"></i><input type="text" id="company"
                                 name="company" required placeholder="Nome da sua empresa"></div>
                     </div>
                     <div class="form-group">
-                        <label for="role">Cargo / Função</label>
+                        <label for="cnpj">CNPJ *</label>
+                        <div class="input-wrapper"><i class="ph ph-identification-card"></i><input type="text" id="cnpj"
+                                name="cnpj" required placeholder="00.000.000/0000-00"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="role">Cargo / Função *</label>
                         <div class="input-wrapper"><i class="ph ph-briefcase"></i><input type="text" id="role"
-                                name="role" required placeholder="Ex: Diretor de Operações"></div>
+                                name="role" required placeholder="Ex: CEO, Diretor de Operações, CTO"></div>
                     </div>
                     <div class="form-group">
                         <label>Você participa da decisão de investimento em tecnologia?</label>
