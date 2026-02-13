@@ -4160,3 +4160,41 @@ html {
       rgba(248, 250, 252, 0.05) 60%,
       rgba(248, 250, 252, 0.15) 100%);
 }
+
+/* Scroll Indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 12vh;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  transition: color 0.3s ease;
+}
+
+.scroll-indicator i {
+  font-size: 2rem;
+}
+
+.scroll-indicator span {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.scroll-indicator:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 768px) {
+  .scroll-indicator {
+    bottom: 18vh;
+  }
+}
