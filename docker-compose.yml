@@ -1,0 +1,38 @@
+services:
+  app:
+    build: .
+    container_name: aivra-app
+    restart: unless-stopped
+    environment:
+      - DB_CONNECTION=pgsql
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_DATABASE=aivra_db
+      - DB_USERNAME=admin
+      - DB_PASSWORD=sua_senha_secreta_aqui
+    volumes:
+      - ./:/var/www/html
+    networks:
+      - proxy
+
+  nginx:
+    image: nginx:alpine
+    container_name: aivra-nginx
+    restart: unless-stopped
+    volumes:
+      - ./:/var/www/html
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    networks:
+      - proxy
+    depends_on:
+      - app
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.aivra.rule=Host(`aivra.tech`) || Host(`www.aivra.tech`)"
+      - "traefik.http.routers.aivra.entrypoints=websecure"
+      - "traefik.http.routers.aivra.tls.certresolver=myresolver"
+      - "traefik.http.services.aivra.loadbalancer.server.port=80"
+
+networks:
+  proxy:
+    external: true
