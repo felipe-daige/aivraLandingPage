@@ -5,26 +5,29 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon.ico') }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aivra - Arquitetura de Negócio & Automação Inteligente</title>
+    <title>Aivra — Tecnologia que Gera Receita | Automação & IA</title>
     <meta name="description"
-        content="Transformamos custos operacionais em ativos estratégicos de crescimento. Automação, Integração, Infraestrutura e IA para empresas mid-market e enterprise.">
-    <link rel="canonical" href="https://aivra.com.br/" />
+        content="Transformamos custos operacionais em sistemas autônomos que geram receita 24/7. Automação, IA, infraestrutura e software sob medida para empresas mid-market e enterprise.">
+    <link rel="canonical" href="https://aivra.tech/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://aivra.com.br/" />
-    <meta property="og:title" content="Aivra - Automação Inteligente & IA para Negócios" />
+    <meta property="og:url" content="https://aivra.tech/" />
+    <meta property="og:title" content="Aivra — Tecnologia que Gera Receita" />
     <meta property="og:description"
-        content="Desenvolvemos softwares personalizados e ecossistemas digitais que integram estratégia, automação e inteligência para escalar seu negócio." />
-    <meta property="og:image" content="https://aivra.com.br/og-image.jpg" />
+        content="Transformamos custos operacionais em sistemas autônomos que escalam seu negócio 24/7. Arquitetura digital, automação e IA para crescer sem limites." />
+    <meta property="og:image" content="https://aivra.tech/assets/img/aivraLogo-linkpreview.jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://aivra.com.br/" />
-    <meta property="twitter:title" content="Aivra - Automação Inteligente & IA" />
-    <meta property="twitter:description"
-        content="Desenvolvemos softwares personalizados e ecossistemas digitais que integram estratégia, automação e inteligência para escalar seu negócio." />
-    <meta property="twitter:image" content="https://aivra.com.br/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://aivra.tech/" />
+    <meta name="twitter:title" content="Aivra — Tecnologia que Gera Receita" />
+    <meta name="twitter:description"
+        content="Transformamos custos operacionais em sistemas autônomos que escalam seu negócio 24/7. Arquitetura digital, automação e IA para crescer sem limites." />
+    <meta name="twitter:image" content="https://aivra.tech/assets/img/aivraLogo-linkpreview.jpeg" />
 
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Aivra Automation" />
@@ -40,8 +43,8 @@
             "@@context": "https://schema.org",
             "@@type": "Organization",
             "name": "Aivra Automação",
-            "url": "https://aivra.com.br",
-            "logo": "https://aivra.com.br/assets/img/Logo.svg",
+            "url": "https://aivra.tech",
+            "logo": "https://aivra.tech/assets/img/Logo.svg",
             "description": "Arquitetura de Negócio & Automação Inteligente para empresas mid-market e enterprise.",
             "contactPoint": {
                 "@@type": "ContactPoint",

@@ -4,8 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aivra | Fale Conosco</title>
-    <meta name="description" content="Entre em contato com a Aivra e agende sua análise tecnológica.">
+    <title>Aivra — Vamos Construir o Futuro?</title>
+    <meta name="description" content="Agende uma análise gratuita da sua operação. Nosso time mapeia gargalos e desenha a estratégia tecnológica ideal para escalar seu negócio.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://aivra.tech/contato" />
+    <meta property="og:title" content="Aivra — Vamos Construir o Futuro?" />
+    <meta property="og:description" content="Agende uma análise gratuita da sua operação. Nosso time mapeia gargalos e desenha a estratégia tecnológica ideal para escalar seu negócio." />
+    <meta property="og:image" content="https://aivra.tech/assets/img/aivraLogo-linkpreview.jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Aivra — Vamos Construir o Futuro?" />
+    <meta name="twitter:description" content="Agende uma análise gratuita da sua operação. Nosso time mapeia gargalos e desenha a estratégia tecnológica ideal para escalar seu negócio." />
+    <meta name="twitter:image" content="https://aivra.tech/assets/img/aivraLogo-linkpreview.jpeg" />
+
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Google Fonts -->
@@ -450,9 +467,9 @@
                             <i class="ph ph-instagram-logo"></i>
                             <span>Instagram</span>
                         </a>
-                        <a href="mailto:contato@aivra.com.br" class="social-link-item">
+                        <a href="mailto:contato@aivra.tech" class="social-link-item">
                             <i class="ph ph-envelope"></i>
-                            <span>contato@aivra.com.br</span>
+                            <span>contato@aivra.tech</span>
                         </a>
                     </div>
                 </div>
