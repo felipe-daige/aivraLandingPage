@@ -409,7 +409,7 @@
                         <span class="tag">Vendas</span>
                         <span class="tag">IA</span>
                     </div>
-                    <a href="#" class="saas-cta open-modal">
+                    <a href="https://calzap.com.br/" target="_blank" rel="noopener noreferrer" class="saas-cta">
                         Saiba Mais <i class="ph ph-arrow-right"></i>
                     </a>
                 </div>
@@ -430,6 +430,22 @@
                         <span class="tag">WhatsApp</span>
                     </div>
                     <a href="https://fiscaldock.com.br" target="_blank" rel="noopener noreferrer" class="saas-cta">
+                        Conhecer Solução <i class="ph ph-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="saas-card glassmorphism reveal delay-400">
+                    <div class="saas-badge new">Novo</div>
+                    <div class="saas-header">
+                        <img src="{{ asset('assets/img/logoBotplantao-removebg.png') }}" alt="BotPlantão Logo" class="saas-logo-img">
+                        <h3>BotPlantão</h3>
+                    </div>
+                    <p>Automação inteligente que monitora grupos de WhatsApp 24/7 e garante plantões médicos em milissegundos. Responda primeiro, aumente sua renda e nunca mais perca uma vaga por estar ocupado.</p>
+                    <div class="saas-tags">
+                        <span class="tag">WhatsApp</span>
+                        <span class="tag">Médico</span>
+                        <span class="tag">Automação</span>
+                    </div>
+                    <a href="https://botplantao.com.br" target="_blank" rel="noopener noreferrer" class="saas-cta">
                         Conhecer Solução <i class="ph ph-arrow-right"></i>
                     </a>
                 </div>
