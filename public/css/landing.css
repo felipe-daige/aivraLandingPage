@@ -4180,6 +4180,11 @@ html {
   animation: fade-in-up 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
+.cover-container .hero-sub {
+  opacity: 0;
+  animation: fade-in-up 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s forwards;
+}
+
 @keyframes float-logo {
 
   0%,
@@ -4195,7 +4200,7 @@ html {
 @keyframes fade-in-up {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(8px);
   }
 
   to {
@@ -4263,13 +4268,15 @@ html {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  animation: scroll-bounce 2s infinite;
+  animation: scroll-bounce 2s 1.6s infinite;
   cursor: pointer;
   transition: color 0.3s ease;
 }
 
 .scroll-indicator i {
   font-size: 2rem;
+  opacity: 0;
+  animation: fade-in-up 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.6s forwards;
 }
 
 .scroll-text {
@@ -4279,6 +4286,8 @@ html {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   white-space: nowrap;
+  opacity: 0;
+  animation: fade-in-up 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.45s forwards;
 }
 
 .scroll-indicator:hover {
