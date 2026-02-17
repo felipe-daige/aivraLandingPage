@@ -600,6 +600,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 1);
   border-radius: var(--radius-pill);
   width: fit-content;
+  margin: 0 auto;
   box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.1);
 }
 
@@ -1001,10 +1002,20 @@ body {
 
   .cta-group {
     justify-content: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-stats {
+    gap: 1.25rem;
+    padding: 1.125rem 1.5rem;
   }
 
   .hero-visual-col {
     display: none;
+  }
+
+  .original-hero-content {
+    padding-bottom: 4rem !important; /* simetria com #solucoes abaixo do carousel */
   }
 }
 
@@ -1715,7 +1726,7 @@ body {
 .luminous-cta-wrapper {
   display: flex;
   justify-content: center;
-  margin-top: 4rem;
+  margin-top: 0.5rem;
 }
 
 .luminous-card {
@@ -2800,6 +2811,14 @@ body {
     grid-template-columns: 1fr;
   }
 
+  .reveal.delay-100,
+  .reveal.delay-200,
+  .reveal.delay-300,
+  .reveal.delay-400,
+  .reveal.delay-500 {
+    transition-delay: 0s;
+  }
+
   .benefits-grid {
     grid-template-columns: 1fr;
   }
@@ -2850,8 +2869,27 @@ body {
   }
 
   .btn-primary {
-    padding: 0.875rem 1.5rem;
-    font-size: 0.9rem;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.875rem;
+  }
+
+  .btn-minimal {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.875rem;
+    gap: 0.375rem;
+  }
+
+  .hero-stats {
+    gap: 1rem;
+    padding: 0.875rem 1.25rem;
+  }
+
+  .stat-value { font-size: 1.05rem; }
+  .stat-label { font-size: 0.65rem; }
+  .stat-divider { height: 22px; }
+
+  .original-hero-content {
+    padding-bottom: 4rem !important; /* simetria com #solucoes abaixo do carousel */
   }
 
   .feature-grid {
@@ -3893,6 +3931,57 @@ body {
   animation-play-state: paused;
 }
 
+/* Tech Carousel — Mobile Responsive */
+@media (max-width: 768px) {
+  .tech-carousel {
+    padding: 1.85rem 0;
+    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  }
+
+  .tech-track {
+    gap: 2.5rem;
+    animation-duration: 35s;
+  }
+
+  .tech-item {
+    font-size: 0.875rem;
+  }
+
+  .tech-item i {
+    font-size: 1.15rem;
+  }
+
+  .tech-track.js-controlled {
+    touch-action: pan-y;
+    cursor: grab;
+  }
+  .tech-track.js-controlled.dragging {
+    cursor: grabbing;
+  }
+}
+
+@media (max-width: 480px) {
+  .tech-carousel {
+    padding: 1.5rem 0;
+    mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+  }
+
+  .tech-track {
+    gap: 2rem;
+    animation-duration: 28s;
+  }
+
+  .tech-item {
+    font-size: 0.85rem;
+  }
+
+  .tech-item i {
+    font-size: 1.1rem;
+  }
+}
+
 /* =========================================
    PERFORMANCE GRAPH COMPONENT
    ========================================= */
@@ -4159,7 +4248,9 @@ html {
   width: 380px;
   height: auto;
   filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.6));
-  animation: float-logo 6s ease-in-out infinite;
+  opacity: 0;
+  animation: fade-in-up 0.6s ease-out forwards,
+             float-logo 6s ease-in-out 0.6s infinite;
 }
 
 .brand-title {
@@ -4177,7 +4268,8 @@ html {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 0 0 50px rgba(255, 255, 255, 0.4), 0 0 20px rgba(148, 163, 184, 0.3);
-  animation: fade-in-up 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  opacity: 0;
+  animation: fade-in-up 0.6s ease-out 0.15s forwards;
 }
 
 .cover-container .hero-sub {
@@ -4313,20 +4405,6 @@ html {
   .scroll-indicator {
     bottom: 18vh;
   }
-}
-
-/* Animation Utilities */
-.fade-in-up {
-  opacity: 0;
-  animation: fade-in-up 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-}
-
-.delay-200 {
-  animation-delay: 0.2s;
-}
-
-.delay-500 {
-  animation-delay: 0.5s;
 }
 
 /* ========== CONTACT PAGE ========== */

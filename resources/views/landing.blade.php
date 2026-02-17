@@ -34,8 +34,9 @@
 
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="stylesheet" href="{{ asset('css/landing.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/components.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/landing.css') }}?v={{ filemtime(public_path('css/landing.css')) }}">
+    <link rel="stylesheet" href="{{ asset('css/components.css') }}?v={{ filemtime(public_path('css/components.css')) }}">
+    <link rel="preload" href="{{ asset('assets/CleanShot_2025-10-11_at_17.12.46_t4bh4w.mov') }}" as="video" type="video/mp4">
     <script src="{{ asset('js/landing.js') }}" defer></script>
 
     <script type="application/ld+json">
@@ -80,7 +81,7 @@
 
     <!-- NEW 3D HERO SECTION -->
     <div class="cover-container">
-        <video autoplay muted loop playsinline id="bg-video">
+        <video autoplay muted loop playsinline preload="auto" fetchpriority="high" id="bg-video">
             <source src="{{ asset('assets/CleanShot_2025-10-11_at_17.12.46_t4bh4w.mov') }}" type="video/mp4">
             Your browser does not support HTML5 video.
         </video>
@@ -90,12 +91,12 @@
         <div class="content-center">
             <img src="{{ asset('assets/img/Logo Aivra 3D Branca.svg') }}" alt="Aivra Logo" class="logo-hero">
             <h1 class="brand-title">Aivra</h1>
-            <h2 class="hero-sub fade-in-up delay-200" style="color: rgba(255, 255, 255, 0.8); font-size: 1.5rem; font-weight: 400; margin-top: 1rem; max-width: 600px; opacity: 0; animation-fill-mode: forwards;">
-                Tecnologia que molda o futuro dos seus negócios.
+            <h2 class="hero-sub" style="color: rgba(255, 255, 255, 0.8); font-size: 1.5rem; font-weight: 400; margin-top: 1rem; max-width: 600px;">
+                Tecnologia que molda negócios.
             </h2>
         </div>
 
-        <div class="scroll-indicator fade-in-up delay-500">
+        <div class="scroll-indicator">
             <span class="scroll-text">Clique e conheça mais</span>
             <i class="ph ph-caret-down"></i>
         </div>
@@ -123,7 +124,7 @@
                     Sua operação <br>
                     <span class="text-gradient">sem limites.</span>
                 </h1>
-                <p class="hero-sub" style="color: #475569;">
+                <p class="hero-sub">
                     Desenvolvemos softwares personalizados e ecossistemas digitais que integram estratégia, automação e inteligência para escalar seu negócio.
                 </p>
 
@@ -261,7 +262,6 @@
                 <div class="panel-item primary-panel technical-card">
                     <div class="panel-header">
                         <div class="panel-icon primary"><i class="ph ph-gear-six"></i></div>
-                        <div class="panel-status"><span class="status-dot"></span>ACTIVE</div>
                     </div>
                     <div class="panel-content">
                         <h3>Automação de Processos</h3>
@@ -434,7 +434,7 @@
                     </a>
                 </div>
                 <div class="saas-card glassmorphism reveal delay-400">
-                    <div class="saas-badge new">Novo</div>
+                    <div class="saas-badge">Em Breve</div>
                     <div class="saas-header">
                         <img src="{{ asset('assets/img/logoBotplantao-removebg.png') }}" alt="BotPlantão Logo" class="saas-logo-img">
                         <h3>BotPlantão</h3>
@@ -634,7 +634,7 @@
                 </div>
             </div>
 
-            <div class="reveal delay-500" style="text-align: center; margin-top: 3rem;">
+            <div class="reveal delay-500" style="text-align: center; margin-top: 1.5rem;">
                 <a href="/contato" class="btn-primary">Fale Conosco</a>
             </div>
         </div>
